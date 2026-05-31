@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Cumpleaños de Mateo!</title>
+    <style>
+        /* Importando fuentes divertidas estilo cómic/Lego */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@600&display=swap');
+        
+        body {
+            background-color: #4DB8FF; /* Azul cielo */
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .invitation-card {
+            background-color: #ffffff;
+            border: 8px solid #FFCC00; /* Amarillo Lego */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #E3000B; /* Rojo Lego */
+            font-size: 2.2em;
+            margin-top: 10px;
+            text-shadow: 2px 2px 0px #FFCC00;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-family: 'Fredoka One', cursive;
+            color: #0055BF; /* Azul Lego */
+            font-size: 2.8em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .age {
+            font-family: 'Fredoka One', cursive;
+            font-size: 5em;
+            color: #009900; /* Verde Lego */
+            margin: 0;
+            line-height: 1;
+            text-shadow: 3px 3px 0px #FFCC00;
+        }
+        .details {
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-left: 8px solid #E3000B;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .details p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #444;
+        }
+        .note {
+            background-color: #FFCC00;
+            color: #000;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+            border: 2px dashed #E3000B;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #E3000B;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2em;
+            padding: 15px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 0px #990000;
+            border: 3px solid #fff;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #ff1a26;
+            box-shadow: 0 8px 0px #990000;
+        }
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0px #990000;
+        }
+        /* Decoraciones de bloques esquineros */
+        .brick {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            border-radius: 3px;
+            border: 2px solid rgba(0,0,0,0.15);
+            opacity: 0.8;
+        }
+        .brick::after {
+            content: '';
+            position: absolute;
+            top: 2px; left: 5px; right: 5px; bottom: 15px;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.1) 40%, transparent 50%);
+            background-size: 10px 10px;
+        }
+        .brick.red { background-color: #E3000B; top: 15px; left: -10px; transform: rotate(-15deg); }
+        .brick.blue { background-color: #0055BF; bottom: 15px; right: -10px; transform: rotate(15deg); }
+        .brick.green { background-color: #009900; top: 15px; right: -10px; transform: rotate(20deg); }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <!-- Bloques decorativos -->
+        <div class="brick red"></div>
+        <div class="brick blue"></div>
+        <div class="brick green"></div>
+
+        <h1>¡TODO ES INCREÍBLE!</h1>
+        <p class="subtitle">¡Estás invitado a construir recuerdos en el cumpleaños de</p>
+        <h2>MATEO!</h2>
+        <p class="age">5</p>
+
+        <div class="details">
+            <p>📍 <strong>Lugar:</strong> FUNSPOT (Costa del Este)</p>
+            <p>📅 <strong>Fecha:</strong> Sábado, 11 de Julio</p>
+            <p>⏰ <strong>Horario:</strong> 11:00 AM - 2:00 PM</p>
+        </div>
+
+        <div class="note">
+            🚧 Recomendación: 1 papito por constructor 🚧
+        </div>
+
+        <!-- El enlace utiliza el código de país de Panamá (+507) y pre-carga un mensaje -->
+        <a href="https://wa.me/50765506253?text=¡Hola%20Jefe%20Constructor!%20🏗️%20Confirmo%20asistencia%20para%20el%20súper%20cumpleaños%20número%205%20de%20Mateo.%20¡Todo%20será%20increíble!" class="btn" target="_blank">
+            ¡CONFIRMAR AL JEFE CONSTRUCTOR AQUÍ!
+        </a>
+    </div>
+
+</body>
+</html>
